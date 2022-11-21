@@ -21,14 +21,19 @@ sprintf("Standard deviation: %f",sapply(data, sd))
 
 
 
-##########QUESTION 2##########
+##########QUESTION 5##########
+library(Pareto)
 
+pareto <- dPareto(data$x, 1000 ,2.7931)
+hist(pareto)
 
+for (i in 1:1000) {
+  pareto <- dPareto(data$x, 1000 ,2.7931)
+  hist(pareto)
+}
 
-
-
-
-
+mean(pareto)
+sum(log(data$x))
 
 
 
